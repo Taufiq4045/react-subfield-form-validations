@@ -44,7 +44,7 @@ const ContactForm = () => {
   // Function called on submit that uses emailjs to send email of valid contact form
   const onSubmit = async (data) => {
     // Destrcture data object
-    const { id, name, message, type, messageFormat, headerFormat, isDecline, orgShould, batchNo, networkFormat } = data;
+    const { id, name, message, type, messageFormat, headerFormat, messageField, isDecline, orgShould, batchNo, networkFormat } = data;
     try {
       // Disable form while processing submission
       setDisabled(true);
@@ -57,6 +57,7 @@ const ContactForm = () => {
         type,
         messageFormat,
         headerFormat,
+        messageField,
         isDecline,
         orgShould,
         batchNo,
@@ -245,7 +246,8 @@ const ContactForm = () => {
                         </div>
                         <div className='row formRow'>
                             <div className='col'>
-                                <Multiselect                                    
+                                <Multiselect
+                                    name='messageField'                                    
                                     showArrow options={messageField} 
                                     isObject={false} />
                             </div>
@@ -313,6 +315,7 @@ const ContactForm = () => {
                         <div className='row formRow'>
                             <div className='col'>
                                 <Multiselect 
+                                    name='messageField'
                                     showArrow options={messageField} 
                                     isObject={false} />
                             </div>
@@ -380,6 +383,7 @@ const ContactForm = () => {
                         <div className='row formRow'>
                             <div className='col'>
                                 <Multiselect 
+                                    name='messageField'
                                     showArrow options={messageField} 
                                     isObject={false} />
                             </div>
@@ -457,7 +461,8 @@ const ContactForm = () => {
                         </div>
                         <div className='row formRow'>
                             <div className='col'>
-                                <Multiselect 
+                                <Multiselect
+                                    name='messageField' 
                                     showArrow options={messageField} 
                                     isObject={false} />
                             </div>
@@ -524,6 +529,7 @@ const ContactForm = () => {
                         <div className='row formRow'>
                             <div className='col'>
                                 <Multiselect 
+                                    name='messageField'
                                     showArrow options={messageField} 
                                     isObject={false} />
                             </div>
